@@ -93,9 +93,11 @@ export default function Modal({
             overflowY: "auto",
             display: "flex",
             flexDirection: "column",
+            background: "#f8f0e3" /* parchment color */,
           }}
         >
           <div
+            className="modal-content-text"
             style={{
               display: "flex",
               flexDirection: "column",
