@@ -10,7 +10,7 @@ export default function DigitalGarden() {
       <h2>Our little Digital Garden 🌼</h2>
 
       <div className="garden-grid">
-        {images.map((src, i) => (
+        {images.map((photo, i) => (
           <div
             key={i}
             className="polaroid"
@@ -21,12 +21,12 @@ export default function DigitalGarden() {
             } // random tilt
           >
             <img
-              src={src}
+              src={photo.photoSource}
               alt={`Memory ${i + 1}`}
               className="polaroid-image"
               loading="lazy"
             />
-            <p className="polaroid-caption">Memory {i + 1}</p>
+            <p className="polaroid-caption">{photo.caption}</p>
           </div>
         ))}
       </div>
