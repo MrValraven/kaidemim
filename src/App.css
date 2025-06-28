@@ -160,6 +160,8 @@ header {
   right: 100px;
   bottom: 0px;
   height: 125px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
 }
 
 .sticker:hover {
