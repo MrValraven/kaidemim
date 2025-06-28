@@ -1,42 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  font-family: "EB Garamond", serif;
+  font-size: 64px;
+  margin: 25px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #b9a67f; /* Paper color background */
+  margin-bottom: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.tabs {
+  display: flex;
+  gap: 20px;
 }
 
-.card {
-  padding: 2em;
+.tab {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  background: #fdfaf4;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  clip-path: polygon(
+    0 0,
+    100% 0%,
+    100% 80%,
+    95% 100%,
+    80% 90%,
+    60% 100%,
+    40% 90%,
+    20% 100%,
+    5% 90%,
+    0 100%
+  );
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.tab:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tab.active {
+  background: #fff8dc; /* like aged parchment */
+  font-weight: bold;
+  color: #222;
+  text-shadow: 1px 1px 0 #fff;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.app-content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.poem-container {
+  background: #f8f0e3; /* parchment color */
+  padding: 3rem 2rem;
+  padding-bottom: 5rem;
+  margin: 2rem;
+  border-radius: 6px;
+  position: relative;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.2); /* smoky glow */
+  font-family: "Georgia", serif;
+  color: #2e2e2e;
+
+  /* Soft paper-like texture */
+  background-image: radial-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 0),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.02), transparent);
+  background-size: 6px 6px, 100% 100%;
+  background-blend-mode: multiply;
+
+  /* Softer jagged edge effect */
+  clip-path: polygon(
+    0% 0%,
+    4% 2%,
+    9% 0%,
+    14% 2%,
+    20% 0%,
+    26% 2%,
+    32% 1%,
+    38% 3%,
+    44% 1%,
+    50% 2%,
+    56% 0%,
+    62% 3%,
+    68% 1%,
+    74% 2%,
+    80% 0%,
+    86% 2%,
+    92% 1%,
+    98% 2%,
+    100% 0%,
+    100% 100%,
+    98% 98%,
+    92% 100%,
+    86% 98%,
+    80% 100%,
+    74% 98%,
+    68% 99%,
+    62% 98%,
+    56% 100%,
+    50% 98%,
+    44% 100%,
+    38% 98%,
+    32% 99%,
+    26% 98%,
+    20% 100%,
+    14% 98%,
+    9% 99%,
+    4% 97%,
+    0% 100%
+  );
+}
+
+.sticker {
+  position: absolute;
+  height: 200px;
+  cursor: pointer;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border: 0px solid transparent;
+  view-transition-name: "shared-image";
+}
+
+.sticker.chappel2 {
+  left: 20px;
+  height: 150px;
+  top: -50px;
+  border-bottom-left-radius: 40px;
+  transform: rotate(270deg);
+}
+
+.sticker.chappel3 {
+  right: 0px;
+  top: 0px;
+  border-bottom-left-radius: 40px;
+}
+
+.sticker.chappel4 {
+  right: 100px;
+  bottom: 0px;
+  height: 125px;
+}
+
+.sticker:hover {
+  border: 1px solid #5e2e35;
+}
+
+.chappel3content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.poem-body-stanza {
+  font-family: "EB Garamond", serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  color: #333;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
