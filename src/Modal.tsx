@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 interface ModalProps {
   isOpen: boolean;
@@ -6,6 +6,7 @@ interface ModalProps {
   imageSrc: string;
   title: string;
   children?: React.ReactNode;
+  song?: string;
 }
 
 export default function Modal({
@@ -14,7 +15,26 @@ export default function Modal({
   imageSrc,
   title,
   children,
+  song,
 }: ModalProps) {
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    if (isOpen) {
+      if (audio) {
+        audio.volume = 0.05; // Set volume here (e.g., 30%)
+        audio.play();
+      }
+    } else {
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
@@ -29,6 +49,7 @@ export default function Modal({
           zIndex: 1000,
         }}
       />
+      <audio ref={audioRef} src={song} loop />
 
       {/* Modal content */}
       <div

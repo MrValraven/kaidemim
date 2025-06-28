@@ -9,11 +9,16 @@ import chappel2 from "./assets/eng/chappel2.png";
 import chappel3 from "./assets/eng/chappel3.png";
 import chappel4 from "./assets/eng/chappel4.png";
 
+import NakedInManhattan from "./assets/songs/naked-in-manhattan.mp3";
+import AfterMidnight from "./assets/songs/after-midnight.mp3";
+import RedWineSupernova from "./assets/songs/red-wine-supernova.mp3";
+
 // hoe but make it fashion gif -
 // what is love -
 /* ── Motion variants ───────────────────────────────────────────── */
 import type { Variants } from "framer-motion";
 import Modal from "./Modal";
+import DigitalGarden from "./DigitalGarden";
 
 const container: Variants = {
   hidden: {},
@@ -27,6 +32,19 @@ const item: Variants = {
     opacity: 1,
     transition: { type: "spring" as const, stiffness: 60, damping: 16 },
   },
+};
+
+const getSong = (chosenChappel: string) => {
+  switch (chosenChappel) {
+    case "chappel2":
+      return NakedInManhattan;
+    case "chappel3":
+      return AfterMidnight;
+    case "chappel4":
+      return RedWineSupernova;
+    default:
+      return NakedInManhattan; // Fallback to a default song
+  }
 };
 
 const getModalChildren = (chosenChappel: string = "") => {
@@ -103,9 +121,9 @@ const getModalChildren = (chosenChappel: string = "") => {
             </p>
             <p>
               {" "}
-              Looking back at our text messages, during that 1 year, before we
-              even met in person we always matched each other’s freaks. Deep
-              down I knew I was already going to love you someday ❤️
+              Looking back at our texts, during that 1 year, before we even met
+              in person, we were already matching each other’s freaks. Deep down
+              I already knew I was going to love you someday ❤️
             </p>
           </div>
           <img
@@ -151,6 +169,7 @@ function App() {
         onClose={() => toggleModal(false, null, "")}
         imageSrc={imageSrc || chappel2}
         title="Kai de Mim"
+        song={getSong(chosenChappel)}
       >
         {getModalChildren(chosenChappel)}
       </Modal>
@@ -307,6 +326,12 @@ function App() {
           </motion.div>
         )}
       </div>
+      <div className="digital-garden-co">
+        <DigitalGarden />
+      </div>
+      <footer className="footer">
+        <p>Made with ❤️ by Tiago</p>
+      </footer>
     </section>
   );
 }
