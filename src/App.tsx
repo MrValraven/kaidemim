@@ -91,7 +91,7 @@ const getModalChildren = (chosenChappel: string = "") => {
               that I don't need to be afraid of asking for what I want.
             </p>
             <p>
-              I still remember when we we're having sex at Mise en Scène during
+              I still remember when we were having sex at Mise en Scène during
               the FLINTA Party and you said that I made you feel like such a
               lesbian, I hope you know the feeling is mutual and I'm all here
               for it.
