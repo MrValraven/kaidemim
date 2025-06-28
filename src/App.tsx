@@ -191,11 +191,19 @@ function App() {
               mass: 0.4,
             }}
           >
-            <img
+            <motion.img
               src={chappel2}
               alt="Chappel 2"
               className=" sticker chappel2"
               onClick={() => toggleModal(true, chappel2, "chappel2")}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                delay: currentMode === "portuguese" ? 0.5 : 1,
+                type: "spring",
+                stiffness: 120,
+                damping: 14,
+              }}
             />
             <h1>Kai de Mim</h1>
 
@@ -240,17 +248,33 @@ function App() {
               mass: 0.4,
             }}
           >
-            <img
+            <motion.img
               src={chappel3}
               alt="Chappel 3"
               className=" sticker chappel3"
               onClick={() => toggleModal(true, chappel3, "chappel3")}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                delay: 0.5,
+                type: "spring",
+                stiffness: 120,
+                damping: 14,
+              }}
             />
-            <img
+            <motion.img
               src={chappel4}
               alt="Chappel 4"
               className=" sticker chappel4"
               onClick={() => toggleModal(true, chappel4, "chappel4")}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                delay: 3.5,
+                type: "spring",
+                stiffness: 120,
+                damping: 14,
+              }}
             />
             <h1>Kai de Mim</h1>
 

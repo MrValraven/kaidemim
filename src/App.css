@@ -146,6 +146,7 @@ header {
   top: -50px;
   border-bottom-left-radius: 40px;
   transform: rotate(270deg);
+  opacity: 0;
 }
 
 .sticker.chappel3 {
