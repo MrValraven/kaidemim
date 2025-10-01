@@ -41,6 +41,9 @@ import Photo40 from "./assets/images/photo40.jpg";
 import Photo41 from "./assets/images/photo41.jpg";
 import Photo42 from "./assets/images/photo42.jpg";
 import Photo43 from "./assets/images/photo43.jpg";
+import Photo44 from "./assets/images/photo44.jpg";
+import Photo45 from "./assets/images/photo45.jpg";
+import Photo46 from "./assets/images/photo46.jpg";
 
 export const images = [
   { photoSource: Photo1, caption: "The cutest queers" },
@@ -95,4 +98,7 @@ export const images = [
   },
   { photoSource: Photo40, caption: "YOU ARE SO GORGEOUS I WANNA SCREAM" },
   { photoSource: Photo43, caption: "FREAK(s)" },
+  { photoSource: Photo44, caption: "You got any games on your phone??" },
+  { photoSource: Photo45, caption: "NEURODIVERGENT HOSTILE CUTLERY" },
+  { photoSource: Photo46, caption: "Sign up here 🔗" },
 ];
